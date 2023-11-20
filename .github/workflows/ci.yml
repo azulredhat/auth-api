@@ -8,15 +8,6 @@
     jobs:
       test:
         runs-on: ubuntu-latest
-        container: node:latest
-
-        services:
-          db:
-            image: postgres
-            env:
-              POSTGRES_USER: developer
-              POSTGRES_PASSWORD: supersecretpassword
-              POSTGRES_DB: forumapi_test
     
         strategy:
           matrix:
@@ -35,10 +26,10 @@
             npm run test
           env:
             CI: true
-            PGHOST_TEST: localhost
-            PGUSER_TEST: developer
-            PGDATABASE_TEST: forumapi_test
-            PGPASSWORD_TEST: supersecretpassword
+            PGHOST_TEST: 103.52.114.28
+            PGUSER_TEST: ade
+            PGDATABASE_TEST: forum_api_test
+            PGPASSWORD_TEST: secret
             PGPORT_TEST: 5432
             PGHOST: ${{ secrets.PGHOST }}
             PGUSER: ${{ secrets.PGUSER }}
