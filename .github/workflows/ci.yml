@@ -14,8 +14,9 @@
           db:
             image: postgres
             env:
-              POSTGRES_USER: ${{ secrets.PGUSER_TEST }}
-              POSTGRES_PASSWORD: ${{ secrets.PGPASSWORD_TEST }}
+              POSTGRES_USER: developer
+              POSTGRES_PASSWORD: supersecretpassword
+              POSTGRES_DB: forumapi_test
     
         strategy:
           matrix:
@@ -29,16 +30,16 @@
             node-version: ${{ matrix.node-version }}
         - name: npm install migrate and test
           run: |
-            npm install
+            npm ci
             npm run migrate up
             npm run test
           env:
             CI: true
             PGHOST_TEST: db
-            PGUSER_TEST: ${{ secrets.PGUSER_TEST }}
-            PGDATABASE_TEST: ${{ secrets.PGDATABASE_TEST }}
-            PGPASSWORD_TEST: ${{ secrets.PGPASSWORD_TEST }}
-            PGPORT_TEST: ${{ secrets.PGPORT_TEST }}
+            PGUSER_TEST: developer
+            PGDATABASE_TEST: forumapi_test
+            PGPASSWORD_TEST: supersecretpassword
+            PGPORT_TEST: 5432
             PGHOST: ${{ secrets.PGHOST }}
             PGUSER: ${{ secrets.PGUSER }}
             PGDATABASE: ${{ secrets.PGDATABASE }}
