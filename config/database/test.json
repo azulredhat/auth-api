@@ -1,7 +1,17 @@
 {
-  "user": "developer",
-  "password": "supersecretpassword",
-  "host": "localhost",
-  "port": 5432,
-  "database": "forumapi_test"
+  "user": {
+    "ENV": "PGUSER_TEST"
+  }, 
+  "password": {
+    "ENV": "PGPASSWORD_TEST"
+  }, 
+  "host": {
+    "ENV": "PGHOST_TEST"
+  },
+  "port": {
+    "ENV": "PGPORT_TEST"
+  },
+  "database": {
+    "ENV": "PGDATABASE_TEST"
+  }
 }
