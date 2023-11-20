@@ -31,11 +31,11 @@
             PGDATABASE_TEST: forum_api_test
             PGPASSWORD_TEST: secret
             PGPORT_TEST: 5432
-            PGHOST: ${{ secrets.PGHOST }}
-            PGUSER: ${{ secrets.PGUSER }}
-            PGDATABASE: ${{ secrets.PGDATABASE }}
-            PGPASSWORD: ${{ secrets.PGPASSWORD }}
-            PGPORT: ${{ secrets.PGPORT }}
+            PGHOST: 103.52.114.28
+            PGUSER: ade
+            PGDATABASE: forum_api
+            PGPASSWORD: secret
+            PGPORT: 5432
             ACCESS_TOKEN_KEY: ${{ secrets.ACCESS_TOKEN_KEY }}
             REFRESH_TOKEN_KEY: ${{ secrets.REFRESH_TOKEN_KEY }}
             ACCESS_TOKEN_AGE: ${{ secrets.ACCESS_TOKEN_AGE }}
