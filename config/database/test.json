@@ -1,7 +1,7 @@
 {
-  "user": "developer",
-  "password": "supersecretpassword",
-  "host": "localhost",
+  "user": "ade", 
+  "password": "secret", 
+  "host": "103.52.114.28",
   "port": 5432,
-  "database": "forumapi_test"
+  "database": "forum_api_test"
 }

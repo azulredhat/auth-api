@@ -8,14 +8,6 @@
     jobs:
       test:
         runs-on: ubuntu-latest
-        container: node:latest
-
-        services:
-          db:
-            image: postgres
-            env:
-              POSTGRES_USER: ${{ secrets.PGUSER_TEST }}
-              POSTGRES_PASSWORD: ${{ secrets.PGPASSWORD_TEST }}
     
         strategy:
           matrix:
@@ -30,20 +22,21 @@
         - name: npm install migrate and test
           run: |
             npm install
+            npm run migrate:test up
             npm run migrate up
             npm run test
           env:
             CI: true
-            PGHOST_TEST: db
-            PGUSER_TEST: ${{ secrets.PGUSER_TEST }}
-            PGDATABASE_TEST: ${{ secrets.PGDATABASE_TEST }}
-            PGPASSWORD_TEST: ${{ secrets.PGPASSWORD_TEST }}
-            PGPORT_TEST: ${{ secrets.PGPORT_TEST }}
-            PGHOST: ${{ secrets.PGHOST }}
-            PGUSER: ${{ secrets.PGUSER }}
-            PGDATABASE: ${{ secrets.PGDATABASE }}
-            PGPASSWORD: ${{ secrets.PGPASSWORD }}
-            PGPORT: ${{ secrets.PGPORT }}
+            PGHOST_TEST: 103.52.114.28
+            PGUSER_TEST: ade
+            PGDATABASE_TEST: forum_api_test
+            PGPASSWORD_TEST: secret
+            PGPORT_TEST: 5432
+            PGHOST: 103.52.114.28
+            PGUSER: ade
+            PGDATABASE: forum_api
+            PGPASSWORD: secret
+            PGPORT: 5432
             ACCESS_TOKEN_KEY: ${{ secrets.ACCESS_TOKEN_KEY }}
             REFRESH_TOKEN_KEY: ${{ secrets.REFRESH_TOKEN_KEY }}
             ACCESS_TOKEN_AGE: ${{ secrets.ACCESS_TOKEN_AGE }}
