@@ -31,7 +31,7 @@
         - name: npm install migrate and test
           run: |
             npm install
-            npm run migrate up
+            npm run migrate:test up
             npm run test
           env:
             CI: true
