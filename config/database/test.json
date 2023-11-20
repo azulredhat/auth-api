@@ -1,17 +1,7 @@
 {
-  "user": {
-    "ENV": "PGUSER_TEST"
-  }, 
-  "password": {
-    "ENV": "PGPASSWORD_TEST"
-  }, 
-  "host": {
-    "ENV": "PGHOST_TEST"
-  },
-  "port": {
-    "ENV": "PGPORT_TEST"
-  },
-  "database": {
-    "ENV": "PGDATABASE_TEST"
-  }
+  "user": "ade", 
+  "password": "secret", 
+  "host": "103.52.114.28",
+  "port": 5432,
+  "database": "forum_api_test"
 }
